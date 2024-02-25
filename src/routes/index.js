@@ -5,10 +5,12 @@ import FirstComponent from "../components/firstComponent";
 import UseState from "../hooksExample.js/useState";
 import Docs from "../screens/docs/docs";
 import DocsDup from "../screens/docs/docsDup";
+import Home from "../screens/home";
 
 const PageRoutes = () => {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/first-component" element={<FirstComponent />} />
       <Route path="/docs" element={<Docs />} />
       <Route path="/docs/use-state" element={<UseState />} />

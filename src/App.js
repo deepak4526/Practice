@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 // import FirstComponent from "./components/firstComponent";
 import PageRoutes from "./routes/index";
-import SideBar from "./components/sidebar";
 import TopHeader from "./components/topHeader";
 import WebFooter from "./components/webFooter";
 import Layout, { Content, Footer, Header } from "antd/es/layout/layout";

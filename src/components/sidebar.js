@@ -5,7 +5,7 @@ import {
   VideoCameraOutlined,
   HomeOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu, Button, theme } from "antd";
+import { Layout } from "antd";
 const { Header, Sider, Content } = Layout;
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true);

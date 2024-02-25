@@ -2,11 +2,11 @@ import Sider from "antd/es/layout/Sider";
 import Layout, { Content } from "antd/es/layout/layout";
 import { useState } from "react";
 import SideMenu from "./docsMenu";
-import DocsComponents from "./docsComponents";
+// import DocsComponents from "./docsComponents";
 
 const Docs = () => {
   const [activeId, setActiveId] = useState(1);
-  console.log(activeId);
+  // console.log(activeId);
   return (
     <div className="p-4">
       <Layout className="min-h-[400px] h-full">
