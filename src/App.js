@@ -4,16 +4,22 @@ import "./App.css";
 import PageRoutes from "./routes/index";
 import SideBar from "./components/sidebar";
 import TopHeader from "./components/topHeader";
+import WebFooter from "./components/webFooter";
+import Layout, { Content, Footer, Header } from "antd/es/layout/layout";
 
 function App() {
   return (
-    <div className="App">
-      {/* <SideBar /> */}
-      <TopHeader />
-      <div className="p-8">
+    <Layout className="min-h-screen">
+      <Header className="p-0">
+        <TopHeader />
+      </Header>
+      <Content>
         <PageRoutes />
-      </div>
-    </div>
+      </Content>
+      <Footer className="p-0">
+        <WebFooter />
+      </Footer>
+    </Layout>
   );
 }
 
