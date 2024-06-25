@@ -10,9 +10,9 @@ import Home from "../screens/home";
 const PageRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/first-component" element={<FirstComponent />} />
-      <Route path="/docs" element={<Docs />} />
+      <Route path="/" element={<Docs />} />
       <Route path="/docs/use-state" element={<UseState />} />
       <Route path="/docs-dup" element={<DocsDup />} />
     </Routes>
