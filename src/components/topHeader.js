@@ -10,12 +10,12 @@ const TopHeader = () => {
     {
       key: 1,
       label: "HOME",
-      link: "/",
+      link: "/home",
     },
     {
       key: 2,
-      label: "FIRST COMPONENT",
-      link: "/first-component",
+      label: "NEWS",
+      link: "/news",
     },
     {
       key: 3,
@@ -75,29 +75,6 @@ const TopHeader = () => {
                   </Link>
                 </li>
               ))}
-
-              {/* <li className="text-white leading-normal max-sm:my-8 font-bold">
-                <Link
-                  to="/first-component"
-                  onClick={() => {
-                    setMenuItems(false);
-                  }}
-                  className="hover:text-orange-600"
-                >
-                  FIRST COMPONENT
-                </Link>
-              </li>
-              <li className="text-white leading-normal max-sm:my-8 font-bold">
-                <Link
-                  to="/use-state"
-                  onClick={() => {
-                    setMenuItems(false);
-                  }}
-                  className="hover:text-orange-600"
-                >
-                  USE STATE
-                </Link>
-              </li> */}
             </ul>
           </div>
         </nav>

@@ -1,5 +1,5 @@
 import "./App.css";
-// import FirstComponent from "./components/firstComponent";
+// import News from "./components/News";
 import PageRoutes from "./routes/index";
 import TopHeader from "./components/topHeader";
 import WebFooter from "./components/webFooter";

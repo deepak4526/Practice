@@ -1,30 +1,29 @@
+import { Layout } from "antd";
+import { Content } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
-import Layout, { Content } from "antd/es/layout/layout";
-import { useState } from "react";
-import SideMenu from "./docsMenu";
-import { CaretDownOutlined } from "@ant-design/icons";
-// import DocsComponents from "./docsComponents";
+import { React, useState } from "react";
 
-const Docs = () => {
+import { CaretDownOutlined } from "@ant-design/icons";
+import NewsMenu from "../../components/sideMenus/newsMenu";
+
+const News = () => {
   const [activeId, setActiveId] = useState(1);
   const [openDropId, setOpenDropId] = useState(null);
 
-  // console.log(activeId);
-
   const getComponentById = (id) => {
-    for (const item of SideMenu) {
-      if (item.id === id) {
-        return item.component;
-      }
-      if (item.dropdowns) {
-        for (const subItem of item.dropdowns) {
-          if (subItem.id === id) {
-            return subItem.component;
-          }
-        }
-      }
-    }
-    return null;
+    // for (const item of NewsMenu) {
+    //   if (item.id === id) {
+    //     return item.component;
+    //   }
+    //   if (item.dropdowns) {
+    //     for (const subItem of item.dropdowns) {
+    //       if (subItem.id === id) {
+    //         return subItem.component;
+    //       }
+    //     }
+    //   }
+    // }
+    // return null;
   };
   return (
     <Layout className="min-h-[400px] h-full p-4">
@@ -33,13 +32,14 @@ const Docs = () => {
         className="p-4 rounded-lg "
         // style={{ backgroundColor: "rgb(25 48 69)" }}
       >
-        {SideMenu.map((item) => (
+        {NewsMenu.map((item) => (
           <div key={item.id} className="mt-4 bg-[#19304F] p-4 rounded-lg">
             <div
               key={item.id}
               className="text-sm cursor-pointer font-semibold text-zinc-300 flex items-center"
               onClick={() => {
                 setActiveId(item.id);
+                console.log(activeId);
                 setOpenDropId(openDropId === item.id ? null : item.id);
               }}
             >
@@ -48,7 +48,7 @@ const Docs = () => {
             </div>
 
             <div
-              className={`transition delay-500 duration-300 ease-in-out border ${
+              className={`${
                 openDropId === item.id ? "h-fit" : "h-0 overflow-hidden"
               }`}
             >
@@ -67,13 +67,9 @@ const Docs = () => {
         ))}
       </Sider>
       <Content className="rounded-lg p-4 bg-gray-200 h-full ml-4 min-h-[400px]">
-        {/* {SideMenu.map(
-            (item) =>
-              activeId === item.id && <div key={item.id}>{item.component}</div>
-          )} */}
         {getComponentById(activeId)}
       </Content>
     </Layout>
   );
 };
-export default Docs;
+export default News;

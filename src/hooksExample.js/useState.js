@@ -16,7 +16,7 @@ const UseState = () => {
   const [count, setCount] = useState(0);
   const countIncrease = () => {
     setCount(count + 1);
-    console.log(count);
+    // console.log(count);
   };
   return (
     <>
