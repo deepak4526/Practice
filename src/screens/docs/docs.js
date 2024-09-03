@@ -39,7 +39,7 @@ const Docs = () => {
               key={item.id}
               className="text-sm cursor-pointer font-semibold text-zinc-300 flex items-center"
               onClick={() => {
-                setActiveId(item.id);
+                !item.dropdowns && setActiveId(item.id);
                 setOpenDropId(openDropId === item.id ? null : item.id);
               }}
             >
@@ -48,7 +48,7 @@ const Docs = () => {
             </div>
 
             <div
-              className={`transition delay-500 duration-300 ease-in-out border ${
+              className={`transition delay-500 duration-300 ease-in-out  ${
                 openDropId === item.id ? "h-fit" : "h-0 overflow-hidden"
               }`}
             >

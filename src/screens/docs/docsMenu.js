@@ -7,13 +7,13 @@ const SideMenu = [
     id: 1,
     dropdowns: [
       { id: 2, title: "Use State", component: <UseState /> },
-      { id: 31, title: "Use State", component: <UseState /> },
+      { id: 3, title: "Use State", component: "dfgfd" },
     ],
   },
   {
     title: "FETCH API",
-    id: 2,
-    dropdowns: [{ id: 1, title: "GET", component: <UseState /> }],
+    id: 4,
+    dropdowns: [{ id: 5, title: "GET", component: "<UseState />" }],
   },
 ];
 
