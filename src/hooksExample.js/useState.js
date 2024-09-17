@@ -2,7 +2,9 @@ import { Button } from "antd";
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Typography } from "antd";
 
+const { Title } = Typography;
 const UseState = () => {
   const [count, setCount] = useState(0);
   const countIncrease = () => {
@@ -28,9 +30,9 @@ const UseState = () => {
 
   return (
     <div className="bg-gray-200 m-4 p-8 rounded-lg">
-      <h2 className="text-2xl font-bold underline underline-offset-8 mb-3">
+      <Title level={2} className="font-bold underline underline-offset-8 mb-3">
         Use State in React Hooks
-      </h2>
+      </Title>
       <p className="text-lg">
         The useState hook in React lets you add state to functional components.
         It returns an array with two values: the current state and a function to
@@ -43,7 +45,7 @@ const UseState = () => {
         {importUseState}
       </SyntaxHighlighter>
       <p className="text-xl mt-4 mb-3">Example</p>
-      <SyntaxHighlighter language="jsx" style={dracula}>
+      <SyntaxHighlighter language="jsx" style={dracula} wrapLines={true}>
         {codeBlock}
       </SyntaxHighlighter>
       <p className="text-lg">

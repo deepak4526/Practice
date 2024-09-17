@@ -1,15 +1,24 @@
 import Sider from "antd/es/layout/Sider";
 import Layout, { Content } from "antd/es/layout/layout";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import SideMenu from "./docsMenu";
-import { CaretDownOutlined } from "@ant-design/icons";
+import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
 // import DocsComponents from "./docsComponents";
 
 const Docs = () => {
-  const [activeId, setActiveId] = useState(1);
-  const [openDropId, setOpenDropId] = useState(null);
+  const [activeId, setActiveId] = useState(2);
+  const [openDropId, setOpenDropId] = useState(1);
 
-  // console.log(activeId);
+  // This ref stores the height of each dropdown content
+  const dropdownRefs = useRef({});
+
+  // Dynamically calculate the content height when dropdown is opened
+  const calculateHeight = (id) => {
+    if (dropdownRefs.current[id]) {
+      return dropdownRefs.current[id].scrollHeight;
+    }
+    return 0;
+  };
 
   const getComponentById = (id) => {
     for (const item of SideMenu) {
@@ -26,17 +35,13 @@ const Docs = () => {
     }
     return null;
   };
+
   return (
     <Layout className="min-h-[400px] h-full p-4">
-      <Sider
-        width="16%"
-        className="p-4 rounded-lg "
-        // style={{ backgroundColor: "rgb(25 48 69)" }}
-      >
+      <Sider width="16%" className="p-4 rounded-lg">
         {SideMenu.map((item) => (
           <div key={item.id} className="mt-4 bg-[#19304F] p-4 rounded-lg">
             <div
-              key={item.id}
               className="text-sm cursor-pointer font-semibold text-zinc-300 flex items-center"
               onClick={() => {
                 !item.dropdowns && setActiveId(item.id);
@@ -44,13 +49,22 @@ const Docs = () => {
               }}
             >
               <p>{item.title}</p>
-              {item.dropdowns && <CaretDownOutlined className="ms-auto" />}
+              {item.dropdowns && openDropId === item.id ? (
+                <CaretUpOutlined className="ms-auto" />
+              ) : (
+                <CaretDownOutlined className="ms-auto" />
+              )}
             </div>
 
             <div
-              className={`transition delay-500 duration-300 ease-in-out  ${
-                openDropId === item.id ? "h-fit" : "h-0 overflow-hidden"
-              }`}
+              ref={(el) => (dropdownRefs.current[item.id] = el)} // Store the ref for each dropdown
+              className="transition-all duration-300 ease-in-out overflow-hidden"
+              style={{
+                height:
+                  openDropId === item.id
+                    ? `${calculateHeight(item.id)}px`
+                    : "0px",
+              }}
             >
               {item.dropdowns &&
                 item.dropdowns.map((subItem) => (
@@ -67,13 +81,10 @@ const Docs = () => {
         ))}
       </Sider>
       <Content className="rounded-lg p-4 bg-gray-200 h-full ml-4 min-h-[400px]">
-        {/* {SideMenu.map(
-            (item) =>
-              activeId === item.id && <div key={item.id}>{item.component}</div>
-          )} */}
         {getComponentById(activeId)}
       </Content>
     </Layout>
   );
 };
+
 export default Docs;

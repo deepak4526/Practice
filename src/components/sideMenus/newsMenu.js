@@ -7,6 +7,12 @@ const NewsMenu = [
     component: <BusinessNews />,
     // dropdowns: [{ id: 1, title: "Use State", component: <BusinessNews /> }],
   },
+  {
+    title: "BUSINESS 2",
+    id: 2,
+    component: "<BusinessNews />",
+    // dropdowns: [{ id: 1, title: "Use State", component: <BusinessNews /> }],
+  },
 ];
 
 export default NewsMenu;

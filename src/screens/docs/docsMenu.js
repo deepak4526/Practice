@@ -1,3 +1,4 @@
+import FetchApi from "../../API/FetchApi";
 import UseState from "../../hooksExample.js/useState";
 import Interceptors from "../../reduxDoc/interceptors";
 
@@ -13,7 +14,7 @@ const SideMenu = [
   {
     title: "FETCH API",
     id: 4,
-    dropdowns: [{ id: 5, title: "GET", component: "<UseState />" }],
+    dropdowns: [{ id: 5, title: "GET", component: <FetchApi /> }],
   },
 ];
 

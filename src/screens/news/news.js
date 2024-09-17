@@ -11,19 +11,19 @@ const News = () => {
   const [openDropId, setOpenDropId] = useState(null);
 
   const getComponentById = (id) => {
-    // for (const item of NewsMenu) {
-    //   if (item.id === id) {
-    //     return item.component;
-    //   }
-    //   if (item.dropdowns) {
-    //     for (const subItem of item.dropdowns) {
-    //       if (subItem.id === id) {
-    //         return subItem.component;
-    //       }
-    //     }
-    //   }
-    // }
-    // return null;
+    for (const item of NewsMenu) {
+      if (item.id === id) {
+        return item.component;
+      }
+      if (item.dropdowns) {
+        for (const subItem of item.dropdowns) {
+          if (subItem.id === id) {
+            return subItem.component;
+          }
+        }
+      }
+    }
+    return null;
   };
   return (
     <Layout className="min-h-[400px] h-full p-4">
@@ -38,8 +38,7 @@ const News = () => {
               key={item.id}
               className="text-sm cursor-pointer font-semibold text-zinc-300 flex items-center"
               onClick={() => {
-                setActiveId(item.id);
-                console.log(activeId);
+                !item.dropdowns && setActiveId(item.id);
                 setOpenDropId(openDropId === item.id ? null : item.id);
               }}
             >
@@ -48,7 +47,7 @@ const News = () => {
             </div>
 
             <div
-              className={`${
+              className={`transition delay-500 duration-300 ease-in-out  ${
                 openDropId === item.id ? "h-fit" : "h-0 overflow-hidden"
               }`}
             >
