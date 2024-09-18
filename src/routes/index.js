@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import UseState from "../hooksExample.js/useState";
+import UseState from "../hooksExample/useState";
 import Docs from "../screens/docs/docs";
 import DocsDup from "../screens/docs/docsDup";
 import Home from "../screens/home";

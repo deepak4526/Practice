@@ -3,11 +3,12 @@ import Layout, { Content } from "antd/es/layout/layout";
 import { useState, useRef, useEffect } from "react";
 import SideMenu from "./docsMenu";
 import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
+import HooksIntro from "../../hooksExample/HooksIntro";
 // import DocsComponents from "./docsComponents";
 
 const Docs = () => {
-  const [activeId, setActiveId] = useState(2);
-  const [openDropId, setOpenDropId] = useState(1);
+  const [activeId, setActiveId] = useState();
+  const [openDropId, setOpenDropId] = useState();
 
   // This ref stores the height of each dropdown content
   const dropdownRefs = useRef({});
@@ -81,7 +82,7 @@ const Docs = () => {
         ))}
       </Sider>
       <Content className="rounded-lg p-4 bg-gray-200 h-full ml-4 min-h-[400px]">
-        {getComponentById(activeId)}
+        {!activeId ? <HooksIntro /> : <>{getComponentById(activeId)}</>}
       </Content>
     </Layout>
   );

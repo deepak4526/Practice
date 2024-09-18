@@ -5,10 +5,22 @@ import { React, useState } from "react";
 
 import { CaretDownOutlined } from "@ant-design/icons";
 import NewsMenu from "../../components/sideMenus/newsMenu";
+import { useRef } from "react";
 
 const News = () => {
   const [activeId, setActiveId] = useState(1);
   const [openDropId, setOpenDropId] = useState(null);
+
+  // This ref stores the height of each dropdown content
+  const dropdownRefs = useRef({});
+
+  // Dynamically calculate the content height when dropdown is opened
+  const calculateHeight = (id) => {
+    if (dropdownRefs.current[id]) {
+      return dropdownRefs.current[id].scrollHeight;
+    }
+    return 0;
+  };
 
   const getComponentById = (id) => {
     for (const item of NewsMenu) {
@@ -25,6 +37,7 @@ const News = () => {
     }
     return null;
   };
+
   return (
     <Layout className="min-h-[400px] h-full p-4">
       <Sider
@@ -47,9 +60,14 @@ const News = () => {
             </div>
 
             <div
-              className={`transition delay-500 duration-300 ease-in-out  ${
-                openDropId === item.id ? "h-fit" : "h-0 overflow-hidden"
-              }`}
+              ref={(el) => (dropdownRefs.current[item.id] = el)}
+              className="transition-all duration-300 ease-in-out overflow-hidden"
+              style={{
+                height:
+                  openDropId === item.id
+                    ? `${calculateHeight(item.id)}px`
+                    : "0px",
+              }}
             >
               {item.dropdowns &&
                 item.dropdowns.map((subItem) => (

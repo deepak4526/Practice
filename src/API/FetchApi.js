@@ -1,6 +1,6 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { ConfigProvider, List, Typography } from "antd";
+import { ConfigProvider, Divider, List, Typography } from "antd";
 
 const { Title, Text, Paragraph } = Typography;
 const getApi = `fetch("URL")      //Makes a GET request to the specified URL
@@ -155,7 +155,8 @@ const FetchApi = () => {
             </List.Item>
           </List>
         </Paragraph>
-        <Paragraph className="mt-10">
+        <Divider className="border-1 border-stone-400" />
+        <Paragraph>
           <Text>
             After successfully fetching and logging the data using{" "}
             <strong>
