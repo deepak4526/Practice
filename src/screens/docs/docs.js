@@ -7,7 +7,8 @@ import HooksIntro from "../../hooksExample/HooksIntro";
 // import DocsComponents from "./docsComponents";
 
 const Docs = () => {
-  const [activeId, setActiveId] = useState();
+  const [activeId, setActiveId] = useState(1);
+  const [subActiveId, setSubActiveId] = useState();
   const [openDropId, setOpenDropId] = useState();
 
   // This ref stores the height of each dropdown content
@@ -28,7 +29,7 @@ const Docs = () => {
       }
       if (item.dropdowns) {
         for (const subItem of item.dropdowns) {
-          if (subItem.id === id) {
+          if (subItem.subId === id) {
             return subItem.component;
           }
         }
@@ -45,7 +46,8 @@ const Docs = () => {
             <div
               className="text-sm cursor-pointer font-semibold text-zinc-300 flex items-center"
               onClick={() => {
-                !item.dropdowns && setActiveId(item.id);
+                // !item.dropdowns && setActiveId(item.id);
+                setActiveId(item.id);
                 setOpenDropId(openDropId === item.id ? null : item.id);
               }}
             >
@@ -70,9 +72,9 @@ const Docs = () => {
               {item.dropdowns &&
                 item.dropdowns.map((subItem) => (
                   <p
-                    key={subItem.id}
+                    key={subItem.subId}
                     className="text-sm cursor-pointer text-zinc-300 ms-2 my-2"
-                    onClick={() => setActiveId(subItem.id)}
+                    onClick={() => setSubActiveId(subItem.subId)}
                   >
                     {subItem.title}
                   </p>
@@ -82,7 +84,11 @@ const Docs = () => {
         ))}
       </Sider>
       <Content className="rounded-lg p-4 bg-gray-200 h-full ml-4 min-h-[400px]">
-        {!activeId ? <HooksIntro /> : <>{getComponentById(activeId)}</>}
+        {subActiveId ? (
+          <>{getComponentById(subActiveId)}</>
+        ) : (
+          <>{getComponentById(activeId)}</>
+        )}
       </Content>
     </Layout>
   );
