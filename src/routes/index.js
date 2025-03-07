@@ -10,9 +10,9 @@ import BusinessNews from "../screens/news/business";
 const PageRoutes = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/news" element={<News />} />
-      <Route path="/" element={<Docs />} />
+      <Route path="/docs" element={<Docs />} />
       <Route path="/docs/use-state" element={<UseState />} />
       <Route path="/docs-dup" element={<DocsDup />} />
       <Route path="/news/business" element={<BusinessNews />} />
