@@ -22,9 +22,9 @@ const Docs = () => {
     }
     return 0;
   };
-  useEffect(() => {
-    console.log("Changed id is: ", activeId);
-  }, []);
+  // useEffect(() => {
+  // console.log("Changed id is: ", activeId);
+  // }, []);
   const getComponentById = (id) => {
     for (const item of SideMenu) {
       if (item.id === id) {
@@ -54,7 +54,7 @@ const Docs = () => {
               onClick={() => {
                 // !item.dropdowns && setActiveId(item.id);
                 setActiveId(item.id);
-                setSubActiveId(null);
+                // setSubActiveId(null);
                 setOpenDropId(openDropId === item.id ? null : item.id);
                 console.log("activeId is:", activeId);
               }}

@@ -98,7 +98,7 @@ const FetchApi = () => {
           <Title level={4}>Explaination</Title>
           <List
             size="small"
-            className="border border-gray-300 rounded-lg bg-white"
+            className="border border-gray-300 rounded-lg bg-white mb-2"
           >
             <List.Item>
               <Text>

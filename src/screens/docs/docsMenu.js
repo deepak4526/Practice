@@ -1,5 +1,8 @@
 import FetchApi from "../../API/FetchApi";
+import ArrowFunctions from "../../components/jsES6/arrowFunctions";
 import JSIntro from "../../components/jsES6/introJs";
+import TemplateLiterals from "../../components/jsES6/templateLiterals";
+import VariablesConstants from "../../components/jsES6/variablesConstants";
 import HooksIntro from "../../hooksExample/HooksIntro";
 import UseState from "../../hooksExample/useState";
 
@@ -12,17 +15,17 @@ const SideMenu = [
       {
         subId: 2,
         title: "Variables & Constants",
-        component: "Variables & Constants (let, const)",
+        component: <VariablesConstants />,
       },
       {
         subId: 3,
         title: "Template Literals",
-        component: "Template Literals (String Interpolation)",
+        component: <TemplateLiterals />,
       },
       {
         subId: 4,
         title: "Arrow Functions",
-        component: "Arrow functions (=>) ",
+        component: <ArrowFunctions />,
       },
       { subId: 5, title: "Destructuring", component: "Destructuring" },
       {
