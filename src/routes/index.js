@@ -6,6 +6,7 @@ import DocsDup from "../screens/docs/docsDup";
 import Home from "../screens/home";
 import News from "../screens/news/news";
 import BusinessNews from "../screens/news/business";
+import TryLive from "../components/tryLive";
 
 const PageRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const PageRoutes = () => {
       <Route path="/docs/use-state" element={<UseState />} />
       <Route path="/docs-dup" element={<DocsDup />} />
       <Route path="/news/business" element={<BusinessNews />} />
+      <Route path="/try-live" element={<TryLive />} />
     </Routes>
   );
 };

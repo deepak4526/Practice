@@ -1,5 +1,6 @@
 import FetchApi from "../../API/FetchApi";
 import ArrowFunctions from "../../components/jsES6/arrowFunctions";
+import Destructuring from "../../components/jsES6/destructuring";
 import JSIntro from "../../components/jsES6/introJs";
 import TemplateLiterals from "../../components/jsES6/templateLiterals";
 import VariablesConstants from "../../components/jsES6/variablesConstants";
@@ -27,7 +28,7 @@ const SideMenu = [
         title: "Arrow Functions",
         component: <ArrowFunctions />,
       },
-      { subId: 5, title: "Destructuring", component: "Destructuring" },
+      { subId: 5, title: "Destructuring", component: <Destructuring /> },
       {
         subId: 6,
         title: "Spread & Rest Operators",
