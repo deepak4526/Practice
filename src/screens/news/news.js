@@ -1,10 +1,11 @@
 import { Layout } from "antd";
-import { Content } from "antd/es/layout/layout";
+import { Content, Footer } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import { React, useState } from "react";
 
 import { CaretDownOutlined } from "@ant-design/icons";
 import NewsMenu from "../../components/sideMenus/newsMenu";
+import WebFooter from "../../components/webFooter";
 import { useRef } from "react";
 
 const News = () => {
@@ -39,10 +40,10 @@ const News = () => {
   };
 
   return (
-    <Layout className="min-h-[400px] h-full p-4">
+    <Layout className="min-h-[400px] h-full p-4 max-h-full">
       <Sider
         width="16%"
-        className="p-4 rounded-lg "
+        className="p-4 rounded-lg overflow-y-scroll max-h-full custom-scrollbar"
         // style={{ backgroundColor: "rgb(25 48 69)" }}
       >
         {NewsMenu.map((item) => (
@@ -83,8 +84,11 @@ const News = () => {
           </div>
         ))}
       </Sider>
-      <Content className="rounded-lg p-4 bg-gray-200 h-full ml-4 min-h-[400px]">
+      <Content className="rounded-lg p-4 bg-gray-200 ml-4 overflow-y-scroll max-h-full">
         {getComponentById(activeId)}
+        <Footer className="p-0">
+          <WebFooter />
+        </Footer>
       </Content>
     </Layout>
   );

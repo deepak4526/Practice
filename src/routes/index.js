@@ -6,16 +6,18 @@ import DocsDup from "../screens/docs/docsDup";
 import Home from "../screens/home";
 import News from "../screens/news/news";
 import BusinessNews from "../screens/news/business";
+import TryLive from "../components/tryLive";
 
 const PageRoutes = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/news" element={<News />} />
-      <Route path="/" element={<Docs />} />
+      <Route path="/docs" element={<Docs />} />
       <Route path="/docs/use-state" element={<UseState />} />
       <Route path="/docs-dup" element={<DocsDup />} />
       <Route path="/news/business" element={<BusinessNews />} />
+      <Route path="/try-live" element={<TryLive />} />
     </Routes>
   );
 };

@@ -28,7 +28,7 @@ const TopHeader = () => {
       <Header className="bg-black text-white flex justify-between px-8 relative">
         <Link to="/" className="flex gap-4 max-h-full">
           <img
-            src="../logo-no-background.png"
+            src={`${process.env.PUBLIC_URL}/logo-no-background.png`}
             className="max-w-10 w-auto aspect-square object-contain"
             alt="Panghal"
           />

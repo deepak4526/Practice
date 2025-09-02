@@ -1,9 +1,10 @@
 import Sider from "antd/es/layout/Sider";
-import Layout, { Content } from "antd/es/layout/layout";
+import Layout, { Content, Footer } from "antd/es/layout/layout";
 import { useState, useRef, useEffect } from "react";
 import SideMenu from "./docsMenu";
 import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
 import HooksIntro from "../../hooksExample/HooksIntro";
+import WebFooter from "../../components/webFooter";
 // import DocsComponents from "./docsComponents";
 
 const Docs = () => {
@@ -21,7 +22,9 @@ const Docs = () => {
     }
     return 0;
   };
-
+  // useEffect(() => {
+  // console.log("Changed id is: ", activeId);
+  // }, []);
   const getComponentById = (id) => {
     for (const item of SideMenu) {
       if (item.id === id) {
@@ -40,7 +43,10 @@ const Docs = () => {
 
   return (
     <Layout className="min-h-[400px] h-full p-4">
-      <Sider width="16%" className="p-4 rounded-lg">
+      <Sider
+        width="16%"
+        className="p-4 rounded-lg overflow-y-scroll max-h-full custom-scrollbar"
+      >
         {SideMenu.map((item) => (
           <div key={item.id} className="mt-4 bg-[#19304F] p-4 rounded-lg">
             <div
@@ -48,10 +54,12 @@ const Docs = () => {
               onClick={() => {
                 // !item.dropdowns && setActiveId(item.id);
                 setActiveId(item.id);
+                // setSubActiveId(null);
                 setOpenDropId(openDropId === item.id ? null : item.id);
+                console.log("activeId is:", activeId);
               }}
             >
-              <p>{item.title}</p>
+              <p className="text-zinc-300">{item.title}</p>
               {item.dropdowns && openDropId === item.id ? (
                 <CaretUpOutlined className="ms-auto" />
               ) : (
@@ -83,12 +91,15 @@ const Docs = () => {
           </div>
         ))}
       </Sider>
-      <Content className="rounded-lg p-4 bg-gray-200 h-full ml-4 min-h-[400px]">
+      <Content className="rounded-lg p-4 bg-gray-200 ml-4 overflow-y-scroll max-h-full rc-table-cell-scrollbar flex flex-col justify-between">
         {subActiveId ? (
           <>{getComponentById(subActiveId)}</>
         ) : (
           <>{getComponentById(activeId)}</>
         )}
+        <Footer className="p-0 mt-auto">
+          <WebFooter />
+        </Footer>
       </Content>
     </Layout>
   );

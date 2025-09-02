@@ -24,6 +24,7 @@ const BusinessNews = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         // Initialize state with data and check if more items can be loaded
         setState(data.articles);
         if (data.articles.length < 1) {
