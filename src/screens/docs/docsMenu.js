@@ -1,64 +1,73 @@
-import FetchApi from "../../API/FetchApi";
-import ArrowFunctions from "../../components/jsES6/arrowFunctions";
-import Destructuring from "../../components/jsES6/destructuring";
-import JSIntro from "../../components/jsES6/introJs";
-import TemplateLiterals from "../../components/jsES6/templateLiterals";
-import VariablesConstants from "../../components/jsES6/variablesConstants";
-import HooksIntro from "../../hooksExample/HooksIntro";
-import UseState from "../../hooksExample/useState";
-
 const SideMenu = [
   {
-    title: "JavaScript (ES6+)",
+    title: "JAVASCRIPT (ES6+)",
     id: 1,
-    component: <JSIntro />,
+    path: "/docs/javascript/intro",
     dropdowns: [
       {
         subId: 2,
         title: "Variables & Constants",
-        component: <VariablesConstants />,
+        path: "/docs/javascript/variables-constants",
       },
       {
         subId: 3,
         title: "Template Literals",
-        component: <TemplateLiterals />,
+        path: "/docs/javascript/template-literals",
       },
       {
         subId: 4,
         title: "Arrow Functions",
-        component: <ArrowFunctions />,
+        path: "/docs/javascript/arrow-functions",
       },
-      { subId: 5, title: "Destructuring", component: <Destructuring /> },
+      {
+        subId: 5,
+        title: "Destructuring",
+        path: "/docs/javascript/destructuring",
+      },
       {
         subId: 6,
         title: "Spread & Rest Operators",
-        component: "Spread & Rest Operators (...)",
+        path: "/docs/javascript/spread-rest",
       },
       {
         subId: 7,
         title: "Array Methods",
-        component: "Array Methods (map, filter, reduce)",
+        path: "/docs/javascript/array-methods",
       },
       {
         subId: 8,
         title: "Promises & Async/Await",
-        component: "Promises & Async/Await",
+        path: "/docs/javascript/promises-async",
       },
     ],
   },
   {
     title: "HOOKS",
     id: 9,
-    component: <HooksIntro />,
+    path: "/docs/hooks/intro",
     dropdowns: [
-      { subId: 10, title: "Use State", component: <UseState /> },
-      { subId: 11, title: "Use Effect", component: "dfgfd" },
+      {
+        subId: 10,
+        title: "Use State",
+        path: "/docs/hooks/use-state",
+      },
+      {
+        subId: 11,
+        title: "Use Effect",
+        path: "/docs/hooks/use-effect",
+      },
     ],
   },
   {
     title: "FETCH API",
     id: 12,
-    dropdowns: [{ subId: 13, title: "GET", component: <FetchApi /> }],
+    dropdowns: [
+      {
+        subId: 13,
+        title: "GET",
+        path: "/docs/api/fetch",
+      },
+    ],
   },
 ];
 

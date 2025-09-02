@@ -29,7 +29,7 @@ console.log(addArrow(2, 3)); // Output: 5`;
         >
           Arrow Functions (
           <strong>
-            <code>=></code>
+            <code>={">"}</code>
           </strong>
           )
         </Title>
@@ -37,7 +37,7 @@ console.log(addArrow(2, 3)); // Output: 5`;
           <Text>
             Arrow functions (
             <strong>
-              <code>=></code>
+              <code>={">"}</code>
             </strong>
             ) provide a shorter syntax for writing functions.
           </Text>
