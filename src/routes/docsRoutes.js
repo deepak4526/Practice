@@ -6,6 +6,7 @@ import VariablesConstants from "../components/jsES6/variablesConstants";
 import HooksIntro from "../hooksExample/HooksIntro";
 import UseState from "../hooksExample/useState";
 import FetchApi from "../API/FetchApi";
+import ConditionAndLoops from "../components/jsES6/conditionsAndLoops";
 
 export const DocsRoutes = [
   {
@@ -15,6 +16,10 @@ export const DocsRoutes = [
   {
     path: "/docs/javascript/variables-constants",
     component: VariablesConstants,
+  },
+  {
+    path: "/docs/javascript/conditionals-loops",
+    component: ConditionAndLoops,
   },
   {
     path: "/docs/javascript/template-literals",

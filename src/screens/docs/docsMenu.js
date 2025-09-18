@@ -10,6 +10,11 @@ const SideMenu = [
         path: "/docs/javascript/variables-constants",
       },
       {
+        subId: 12,
+        title: "Conditionals & Loops",
+        path: "/docs/javascript/conditionals-loops",
+      },
+      {
         subId: 3,
         title: "Template Literals",
         path: "/docs/javascript/template-literals",
