@@ -3,7 +3,7 @@ import "./App.css";
 import PageRoutes from "./routes/index";
 import TopHeader from "./components/topHeader";
 // import WebFooter from "./components/webFooter";
-import Layout, { Content, Footer, Header } from "antd/es/layout/layout";
+import Layout, { Content, Header } from "antd/es/layout/layout";
 
 function App() {
   return (
