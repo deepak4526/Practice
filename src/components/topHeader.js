@@ -10,7 +10,7 @@ const TopHeader = () => {
     {
       key: 1,
       label: "HOME",
-      link: "/home",
+      link: "/",
     },
     {
       key: 2,

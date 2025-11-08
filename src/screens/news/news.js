@@ -84,8 +84,8 @@ const News = () => {
           </div>
         ))}
       </Sider>
-      <Content className="rounded-lg p-4 bg-gray-200 ml-4 overflow-y-scroll max-h-full">
-        {getComponentById(activeId)}
+      <Content className="rounded-lg p-4 bg-gray-200 ml-4 overflow-y-scroll max-h-full flex flex-col justify-between">
+        <div>{getComponentById(activeId)}</div>
         <Footer className="p-0">
           <WebFooter />
         </Footer>
