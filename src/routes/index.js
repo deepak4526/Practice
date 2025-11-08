@@ -1,23 +1,24 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import UseState from "../hooksExample/useState";
-import Docs from "../screens/docs/docs";
-import DocsDup from "../screens/docs/docsDup";
 import Home from "../screens/home";
 import News from "../screens/news/news";
-import BusinessNews from "../screens/news/business";
-import TryLive from "../components/tryLive";
+import Docs from "../screens/docs/docs";
+import { DocsRoutes } from "./docsRoutes";
 
 const PageRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/news" element={<News />} />
-      <Route path="/docs" element={<Docs />} />
-      <Route path="/docs/use-state" element={<UseState />} />
-      <Route path="/docs-dup" element={<DocsDup />} />
-      <Route path="/news/business" element={<BusinessNews />} />
-      <Route path="/try-live" element={<TryLive />} />
+      <Route path="/docs" element={<Docs />}>
+        {DocsRoutes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            element={<route.component />}
+          />
+        ))}
+      </Route>
     </Routes>
   );
 };

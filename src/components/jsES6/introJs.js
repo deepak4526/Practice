@@ -32,6 +32,19 @@ const JSIntro = () => {
             Please follow the sidebar menu for further topics:
           </Text>
         </Paragraph>
+        <Paragraph>
+          <Text className="text-lg">JS has 8 Data Types:</Text>
+          <div className="flex flex-col ps-4">
+            <Text>String</Text>
+            <Text>Number</Text>
+            <Text>BigInt</Text>
+            <Text>Boolean</Text>
+            <Text>Undefined</Text>
+            <Text>Null</Text>
+            <Text>Symbol</Text>
+            <Text>Object</Text>
+          </div>
+        </Paragraph>
       </ConfigProvider>
     </div>
   );

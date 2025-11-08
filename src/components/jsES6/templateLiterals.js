@@ -11,7 +11,7 @@ let  age = 30;
 let message1 = "Hello, my name is " + name + "and I am " + age + "years old";
 console.log(message1);
     
-// ES6+ way (using Temaplte Literals)
+// ES6+ way (using Template Literals)
 let message2 = \`Hello, my name is \${name} and I am \${age} years old.\`
 console.log(message2)`;
   return (
